@@ -1,0 +1,66 @@
+.container {
+    margin-top: 30px;
+    background-color: rgba(13, 13, 197, 0.8);;
+    height: 100%;
+    padding: 20px;
+}
+
+.card {
+    padding: 20px; 
+}
+
+.top {
+    display: flex;
+    gap: 100px; 
+    margin-left: 50px;
+}
+button{
+    cursor: pointer;
+
+}
+
+.button {
+    margin-top: 15px;
+    margin-left: 150px;
+}
+
+.button button {
+    background-color: #4099FF;
+    padding: 10px;
+    border: none;
+    font-size: 15px;
+    color: white;
+    border-radius: 5px; 
+}
+
+.Copyright {
+    margin-left: 45px;
+}
+
+p {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .top {
+        flex-direction: column; 
+        align-items: center; 
+        margin-left: 0; 
+        gap: 20px; 
+    }
+
+    .button {
+        margin-left: 0; 
+        text-align: center; 
+    }
+
+    .button button {
+        width: 100%; 
+        max-width: 200px; 
+    }
+
+    .Copyright {
+        text-align: center; 
+        margin-left: 0; 
+    }
+}

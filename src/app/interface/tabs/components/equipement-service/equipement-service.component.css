@@ -1,0 +1,135 @@
+.container {
+  width: 100%; /* Largeur du conteneur */
+  max-width: 1200px; /* Largeur maximale pour éviter que le conteneur ne devienne trop large sur les grands écrans */
+  margin: 0 auto; /* Centre le conteneur horizontalement */
+  padding: 16px; /* Ajoute un peu d'espace intérieur */
+  box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+}
+
+.search-container {
+  margin-bottom: 10px;
+}
+
+.search-box {
+  padding: 8px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.checkbox-list {
+  max-width: 300px;
+}
+
+.checkbox-list label {
+  display: block;
+  margin: 5px 0;
+}
+
+
+section{
+  margin-bottom: 20px;
+  background-color: white;
+  padding: 10px;
+}
+.breakfast-section {
+  margin-top: 20px;
+}
+
+.breakfast-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.breakfast-option {
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.breakfast-option:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.05);
+}
+
+.breakfast-option.selected {
+  background-color: #4caf50;
+  color: white;
+  border-color: #4caf50;
+}
+
+.breakfast-option span {
+  font-size: 16px;
+}
+
+
+
+.oui-non-section {
+
+  margin-top: 20px;
+}
+
+.oui-non-section label {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 15px;
+}
+
+
+.time-section {
+  margin-top: 20px;
+}
+
+.time-inputs {
+  display: flex;
+  gap: 20px;  /* Ajoute de l'espace entre les deux colonnes d'inputs */
+}
+
+.time-inputs div {
+  display: flex;
+  flex-direction: column;  /* Affiche les label et input en colonne */
+  align-items: flex-start; /* Aligne à gauche */
+}
+
+.time-inputs label {
+  margin-bottom: 5px; /* Espacement entre le label et l'input */
+  /* font-weight: bold; */
+}
+
+.time-inputs input[type="time"] {
+  width: 200px;  /* Largeur des champs de type time */
+}
+
+
+#search{
+  width: 50%;
+  height: 30px;
+}
+
+
+.menu-option {
+  display: flex;
+  flex-wrap: wrap;
+  width: 40%;
+}
+
+.menu-option button {
+  margin: 5px; /* Espace autour des boutons */
+  padding: 10px;
+  border: 0.3px solid rgb(172, 172, 172);
+  border-radius: 15px;
+  background-color: initial;
+  cursor: pointer;
+  width: calc(100% - 10px); /* Chaque bouton occupe environ 25% de la largeur du conteneur moins les marges */
+}
+
+.menu-option button.selected {
+  background-color: #a2a3a3; /* Couleur de fond pour les boutons sélectionnés */
+  color: black; /* Couleur du texte pour les boutons sélectionnés */
+}
