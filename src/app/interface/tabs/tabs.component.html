@@ -2,7 +2,7 @@
       <mat-tab-group [(selectedIndex)]="activeTabIndex" (selectedTabChange)="onTabChange($event)">
         <mat-tab>
           <ng-template mat-tab-label class="ng-template">
-            <div class="circle-container">
+            <div class="circle-container" [ngClass]="{'active-tab-background': activeTabIndex === 0}">
               <div class="circle" ><mat-icon>edit_calendar</mat-icon></div>
               <div class="circle-title">Réservations</div>
             </div>
@@ -12,11 +12,11 @@
 
         <mat-tab>
           <ng-template mat-tab-label>
-            <div class="circle-container">
+            <div class="circle-container" [ngClass]="{'active-tab-background': activeTabIndex === 1}">
               <div class="circle" (click)="openSelect(select)">
                 <mat-icon>border_color</mat-icon>
               </div>
-              <select #select (change)="showComponent($event)" style="background-color: #77B5FE; color: white; border: none;">
+              <select #select (change)="showComponent($event)" style="background-color: rgba(13, 13, 197, 0.8); color: white; border: none;">
                 <option value="" disabled [selected]="currentComponent === null">Etablissement</option>
                 <option value="composant1" [selected]="currentComponent === 'composant1'">info sur l'établissement</option>
                 <option value="composant2" [selected]="currentComponent === 'composant2'">type d'établissement</option>
@@ -39,7 +39,7 @@
 
         <mat-tab>
           <ng-template mat-tab-label class="ng-template">
-            <div class="circle-container">
+            <div class="circle-container" [ngClass]="{'active-tab-background': activeTabIndex === 2}">
               <div class="circle" ><mat-icon> mail_outline</mat-icon></div>
               <div class="circle-title">Boite de reception</div>
             </div>
@@ -49,7 +49,7 @@
 
         <mat-tab>
           <ng-template mat-tab-label class="ng-template">
-            <div class="circle-container">
+            <div class="circle-container" [ngClass]="{'active-tab-background': activeTabIndex === 3}">
               <div class="circle" >
                 <mat-icon>favorite</mat-icon>
               </div>
@@ -61,7 +61,7 @@
 
         <mat-tab>
           <ng-template mat-tab-label class="ng-template">
-            <div class="circle-container">
+            <div class="circle-container" [ngClass]="{'active-tab-background': activeTabIndex === 4}">
               <div class="circle" >
                 <mat-icon>receipt_long</mat-icon>
               </div>
@@ -73,7 +73,7 @@
 
         <mat-tab>
           <ng-template mat-tab-label class="ng-template">
-            <div class="circle-container">
+            <div class="circle-container" [ngClass]="{'active-tab-background': activeTabIndex === 5}">
               <div class="circle" ><mat-icon>trending_up</mat-icon></div>
               <div class="circle-title">Analyse</div>
             </div>

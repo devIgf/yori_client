@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatIcon } from '@angular/material/icon';
 
@@ -34,11 +34,7 @@ interface Client {
   styleUrl: './reservation.component.css'
 })
 
-export class ReservationComponent implements OnInit, OnDestroy {
-  ngOnInit(): void {}
-
-  ngOnDestroy(): void {}
-
+export class ReservationComponent{
 
     clients: Client[] = [
     {
@@ -53,7 +49,7 @@ export class ReservationComponent implements OnInit, OnDestroy {
       duree: '4 jours',
       numeroReservation: 'RES123456',
       nombreHebergement:null,
-      personne: 0
+      personne: 5
     },
     {
       nom: 'Marie Curie',
@@ -67,7 +63,7 @@ export class ReservationComponent implements OnInit, OnDestroy {
       duree: '5 jours',
       numeroReservation: 'RES123457',
       nombreHebergement:2,
-      personne: 0
+      personne: 3
     },
     {
       nom: 'Pierre Martin',

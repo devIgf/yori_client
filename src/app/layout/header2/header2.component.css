@@ -9,7 +9,7 @@
   display: flex;
   justify-content: space-between; 
   height: 70px;
-  background-color: #77B5FE;
+  background-color: rgba(13, 13, 197, 0.8);
 } 
 
 .logo {
@@ -35,7 +35,7 @@
 }
 
 #select {
-  background-color: #77B5FE;
+  background-color: rgba(13, 13, 197, 0.8);
   border: none;
   color: white;
   font-size: 15px;
