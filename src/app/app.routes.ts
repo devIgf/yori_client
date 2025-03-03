@@ -27,7 +27,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 export const routes: Routes = [
     {
-        path: '',
+        path: 'auth',
         component: AuthLayoutComponent,
         children: [
           { path: 'connectez-vous', component: NomUtilisateurComponent },
@@ -55,7 +55,7 @@ export const routes: Routes = [
       },
 
       {
-        path: 'interface',
+        path: '',
         component: InterfaceLayoutComponent,
         children: [
           { path: 'amour', component: LeftTreeComponent },

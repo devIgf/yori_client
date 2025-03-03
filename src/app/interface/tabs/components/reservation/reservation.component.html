@@ -1,8 +1,8 @@
 <div class="container">
     <div class="first" *ngIf="!showDetails">
-    <div>
+    <div class="titreFiltre">
             <h2 class="titre">Réservations</h2>
-            <div class="filtre">
+            <div class="filtre"> 
                 <div class="labels">
                     <label *ngFor="let label of labels; let i = index"
                            [ngClass]="getLabelClass(i)"
@@ -63,18 +63,19 @@
                     {{ selectedStatut }}
                 ({{ getClientsFiltres().length }})
                 </div>
-                <button class="printPage" (click)="printPage()">
-                    <mat-icon>
-                    print
-                    </mat-icon>
-                    Imprimer la liste des réservations
-                </button>
+                <div>
+                    <button class="printPage" (click)="printPage()">
+                        <mat-icon>
+                        print
+                        </mat-icon>
+                        Imprimer la liste des réservations
+                    </button>
+                </div>
             </div>
     </div>
 
     <div class="table-responsive">
       <table class="table">
-        <thead>
         <tr>
             <th>Nom du client</th>
             <th>Arrivée</th>
@@ -87,11 +88,10 @@
             <th>Durée</th>
             <th>Numéro de réservation</th>
         </tr>
-        </thead>
         <tbody>
           <tr *ngFor="let client of paginatedClients">
             <td>
-                <span style="color: #77B5FE;">{{ client.nom }}</span> <br>
+                <span style="color: rgba(13, 13, 197, 0.8);">{{ client.nom }}</span> <br>
                 {{ client.personne }} personne(s)
             </td>
             <td>{{ client.arrivee }}</td>
@@ -102,7 +102,6 @@
                 <span *ngIf="(client.nombreHebergement ?? 0) > 0">x{{ client.nombreHebergement }}</span>
             </td>
             <td>{{ client.reserveLe }}</td>
-            <!-- <td><b>{{ client.statuts }}</b></td> -->
             <td [ngStyle]="{'color': client.statuts === 'Annulées' ? 'red' : 'black'}">
               <b>{{ client.statuts }}</b>
           </td>
@@ -113,19 +112,24 @@
         </tr>
         <tr>
             <td colspan="10" class="td-pag">
-                <div>
-                    <button class="btn-pag" (click)="goToPage(currentPage - 1)" [disabled]="currentPage === 1">&lt; Précédent</button>|
+                <div class="pagination">
+                    <div>
+                        <button class="btn-pag" (click)="goToPage(currentPage - 1)" [disabled]="currentPage === 1">&lt; Précédent</button>|
                     <span>Page</span>
                     |<button class="btn-pag" (click)="goToPage(currentPage + 1)" [disabled]="currentPage === totalPages">Suivant &gt;</button>
-                    <select id="itemsPerPage" (change)="onItemsPerPageChange($event)">
-                        <option *ngFor="let option of itemsPerPageOptions" [value]="option">Afficher {{ option }} réservations</option>
-                    </select>
+                    </div>
+                    <div>
+                        <select id="itemsPerPage" (change)="onItemsPerPageChange($event)">
+                            <option *ngFor="let option of itemsPerPageOptions" [value]="option">Afficher {{ option }} réservations</option>
+                        </select>
+                    </div>
                 </div>
             </td>
         </tr>
         </tbody>
     </table>
     </div>
+    
     <div class="totaux">
         <p>Total Commission : <strong>{{ totalCommission() | currency }}</strong></p>
         <p>Total Tarif : <strong>{{ totalTarif() | currency }}</strong></p>
@@ -136,16 +140,25 @@
     <div *ngIf="showDetails">
         <div class="retour">
             <h2>Détails de la réservation</h2>
-            <b>&lt;</b><button class="revenir" (click)="revenir()">Revenir à la synthèse des réservations</button>
         </div>
-        <span class="span">
-            <button class="printPage2" (click)="printPage()">
-                <mat-icon>
-                print
-                </mat-icon>
-                Imprimer la liste des réservations
-            </button>
-        </span>
+        <div class="haut">
+            <div>
+                <button class="revenir" (click)="revenir()">
+                    <span class="material-symbols-outlined">
+                        keyboard_backspace
+                    </span>
+                    Revenir à la synthèse des réservations
+                </button>
+            </div>
+            <div>
+                <button class="printPage2" (click)="printPage()">
+                    <span class="material-symbols-outlined">
+                        print
+                        </span>
+                        Imprimer
+                </button>
+            </div>
+        </div>
         <div *ngIf="selectedClient.statuts == 'Annulées'" class="fact-annulee">
             <mat-icon style="color: brown;">
                 error
