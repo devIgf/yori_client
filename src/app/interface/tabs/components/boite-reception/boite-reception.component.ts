@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatIcon } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs'; 
@@ -10,7 +10,8 @@ interface Message {
   content: string;
   subject?: string;
   date: Date;
-  file:File|null
+  file:File|null,
+  showDropdown: false
 }
 
 @Component({
@@ -31,23 +32,23 @@ interface Message {
     [
       {
         id: 1, content: 'Informations importantes à propos de l\'établissement hotel sotega 1.Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sed itaque amet dignissimos delectus facere sunt fugit non? Delectus ducimus excepturi, obcaecati sapiente nam reiciendis ipsa impedit itaque quaerat natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sed itaque amet dignissimos delectus facere sunt fugit non? Delectus ducimus excepturi, obcaecati sapiente nam reiciendis ipsa impedit itaque quaerat natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sed itaque amet dignissimos delectus facere sunt fugit non? Delectus ducimus excepturi, obcaecati sapiente nam reiciendis ipsa impedit itaque quaerat natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sed itaque amet dignissimos delectus facere sunt fugit non? Delectus ducimus excepturi, obcaecati sapiente nam reiciendis ipsa impedit itaque quaerat natus?', date: new Date('1996-03-01T23:30:00'),
-        file: null
+        file: null,showDropdown: false
       },
       {
         id: 2, content: 'Voici le message 2 avec plus de détails.', date: new Date(),
-        file: null
+        file: null,showDropdown: false
       },
       {
         id: 3, content: 'Message numéro 3 pour la discussion.', date: new Date(),
-        file: null
+        file: null,showDropdown: false
       },
       {
         id: 4, content: 'Détails supplémentaires du message 4.', date: new Date(),
-        file: null
+        file: null,showDropdown: false
       },
       {
         id: 5, content: 'Enfin, le message 5 pour conclure.', date: new Date(),
-        file: null
+        file: null,showDropdown: false
       }
     ];
 
@@ -62,6 +63,9 @@ interface Message {
   replySubject: string = '';
   replyBody: string = '';
   selectedFile: File | null = null;
+favoriteMessage: any;
+
+  
 
   selectMessage(message: Message) {
     if (this.selectedMessage === message) {
@@ -70,6 +74,23 @@ interface Message {
         this.selectedMessage = message; // Ouvre le message sélectionné
     }
   }
+
+  // showDropdownMenu = false;
+  showDropdown(message: any) {
+    message.showDropdown = !message.showDropdown;
+  }
+  
+
+@HostListener('document:click', ['$event'])
+onDocumentClick(event: MouseEvent) {
+  const target = event.target as HTMLElement;
+  if (target && !target.closest('.corner-button') && !target.closest('.dropdown-menu')) {
+    this.receivedMessages.forEach(message => {
+      message.showDropdown = false;
+    });
+  }
+}
+
 
   openReplyPopup() {
       this.isReplying = true;
@@ -99,7 +120,8 @@ interface Message {
             subject: this.replySubject, // Utiliser la propriété 'subject'
             date: new Date() // Définir la date actuelle
             ,
-            file: this.selectedFile // Stocker le fichier sélectionné
+            file: this.selectedFile, // Stocker le fichier sélectionné
+            showDropdown: false
           };
 
           this.sentMessages.push(newMessage); 
@@ -136,5 +158,25 @@ interface Message {
   isImage(file: File): boolean {
     return file.type.startsWith('image/');
   }
+
+  favoriteMessages: number[] = [];
+
+  get favoriteMessagesList() {
+    return this.receivedMessages.filter(message => this.favoriteMessages.includes(message.id));
+  }
+  
+   addToFavorites(message: Message) {
+    if (!this.favoriteMessages.includes(message.id)) {
+      this.favoriteMessages.push(message.id);
+    }
+    message.showDropdown = false; // Ferme le menu déroulant
+  }
+
+  selectedFavoriteMessage!: Message;
+
+selectFavoriteMessage(message: Message) {
+  this.selectedFavoriteMessage = message;
+}
+
 
 }
