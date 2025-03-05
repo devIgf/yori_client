@@ -63,7 +63,7 @@ interface Message {
   replySubject: string = '';
   replyBody: string = '';
   selectedFile: File | null = null;
-favoriteMessage: any;
+  favoriteMessage: any;
 
   
 
@@ -172,11 +172,18 @@ onDocumentClick(event: MouseEvent) {
     message.showDropdown = false; // Ferme le menu déroulant
   }
 
-  selectedFavoriteMessage!: Message;
+  selectedFavoriteMessage?: Message;
 
-selectFavoriteMessage(message: Message) {
-  this.selectedFavoriteMessage = message;
-}
+  selectFavoriteMessage(message: Message) {
+    if (this.selectedFavoriteMessage === message) {
+      this.selectedFavoriteMessage = undefined; // Ferme le message s'il est déjà ouvert
+    } else {
+      this.selectedFavoriteMessage = message; // Ouvre le message sélectionné
+    }
+  }
+  
+
+
 
 
 }
