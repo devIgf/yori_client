@@ -39,7 +39,7 @@
                     <img src="assets/img/logo_bleu.png" alt="logo" width="70" height="50">
                   </div>
                   <div style="margin-top: -10px;">
-                    <p>Yori.com <br> {{ selectedMessage.date | date:'dd MMMM yyyy à HH:mm' }}</p> <!-- Affiche la date -->
+                    <p>Yori.com <br> {{ selectedMessage.date | date:'dd MMMM yyyy à HH:mm' }}</p>
                   </div>
                 </div>
                 <div>
@@ -100,7 +100,7 @@
                     <img [src]="getFileUrl(selectedMessage.file)" alt="Prévisualisation" style="max-width: 200px; max-height: 200px;" />
                 </span>
             </p>    
-            <p><strong>Date :</strong> {{ selectedMessage.date | date:'dd MMMM yyyy à HH:mm' }}</p> <!-- Affiche la date -->
+            <p><strong>Date :</strong> {{ selectedMessage.date | date:'dd MMMM yyyy à HH:mm' }}</p>
             <button (click)="selectMessage(selectedMessage)">Fermer</button>
         </div>
         
@@ -123,11 +123,10 @@
                     <img src="assets/img/logo_bleu.png" alt="logo" width="70" height="50">
                   </div>
                   <div style="margin-top: -10px;">
-                    <p>Yori.com <br> {{ selectedFavoriteMessage.date | date:'dd MMMM yyyy à HH:mm' }}</p> <!-- Affiche la date -->
+                    <p>Yori.com <br> {{ selectedFavoriteMessage.date | date:'dd MMMM yyyy à HH:mm' }}</p>
                   </div>
                 </div>
                 <div>
-                  <!-- Tu pourrais ajouter un bouton pour répondre ici si nécessaire -->
                 </div>
               </div>
               <p><strong>Objet :</strong> {{ selectedFavoriteMessage.subject }}</p>
