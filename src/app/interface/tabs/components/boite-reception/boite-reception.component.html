@@ -1,9 +1,10 @@
+
 <div class="container">
   <h3>Boite e-mail yori.com</h3>
   <div>
     <label>Discuter</label><br>
     <button class="send-message" (click)="sendNewMessage()">
-      <span>Envoyer un message</span>
+      <span>Envoyer un message</span> 
       <mat-icon>send</mat-icon>
     </button>
   </div>
@@ -13,39 +14,51 @@
         <div *ngFor="let message of receivedMessages">
           <div (click)="selectMessage(message)" class="message-preview">
             <div class="message-content">
-                <strong>{{ message.subject }}</strong> - {{ message.content | slice:0:50 }}...
+              <strong>{{ message.subject }}</strong> - {{ message.content | slice:0:50 }}...
             </div>
             <span class="message-date">{{ message.date | date:'dd MMMM yyyy à HH:mm' }}</span>
-        </div>
-  
-            <!-- Affiche les détails du message si celui-ci est sélectionné -->
-            <div *ngIf="selectedMessage === message" class="message-details">
-                <div class="message-text">
-                  <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <div style="display: flex;">
-                      <div>
-                        <img src="assets/img/logo_bleu.png" alt="logo" width="70" height="50">
-                      </div>
-                      <div style="margin-top: -10px;">
-                        <p>Yori.com <br> {{ selectedMessage.date | date:'dd MMMM yyyy à HH:mm' }}</p> <!-- Affiche la date -->
-                      </div>
-                    </div>
-                    <div>
-                      <button (click)="openReplyPopup()" class="btn btn-send">
-                        <mat-icon>reply</mat-icon>
-                        <span>Répondre à ce message</span>
-                      </button>
-                    </div>
+            <button class="corner-button" [class.active]="message.showDropdown" (click)="$event.stopPropagation(); showDropdown(message)">...</button>
+            <ul class="dropdown-menu" [class.show]="message.showDropdown">
+              <li><a href="#" (click)="addToFavorites(message)">
+                <span class="material-symbols-outlined">
+                  star
+                </span>
+              </a></li>
+              <li><a href="#" (click)="addToFavorites(message)"><span class="material-symbols-outlined">
+                delete
+                </span>
+              </a></li>
+              <!-- <li><a href="#" (click)="addToFavorites(message)">Action 3 (ID: {{ message.id }})</a></li> -->
+            </ul>
+          </div>
+          <!-- Affiche les détails du message si celui-ci est sélectionné -->
+          <div *ngIf="selectedMessage === message" class="message-details">
+            <div class="message-text">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div style="display: flex;">
+                  <div>
+                    <img src="assets/img/logo_bleu.png" alt="logo" width="70" height="50">
                   </div>
-                  <p><strong>Objet :</strong> {{ selectedMessage.subject }}</p>
-                  <p>{{ selectedMessage.content }}</p>
-              </div>
+                  <div style="margin-top: -10px;">
+                    <p>Yori.com <br> {{ selectedMessage.date | date:'dd MMMM yyyy à HH:mm' }}</p> <!-- Affiche la date -->
+                  </div>
                 </div>
+                <div>
+                  <button (click)="openReplyPopup()" class="btn btn-send">
+                    <mat-icon>reply</mat-icon>
+                    <span>Répondre à ce message</span>
+                  </button>
+                </div>
+              </div>
+              <p><strong>Objet :</strong> {{ selectedMessage.subject }}</p>
+              <p>{{ selectedMessage.content }}</p>
+          </div>
         </div>
+        </div>
+        
   
         <!-- Overlay pour le pop-up -->
         <div *ngIf="isReplying" class="overlay" (click)="closeReplyPopup()"></div>
-  
         <!-- Pop-up de réponse -->
         <div *ngIf="isReplying" class="reply-popup">
             <div class="reply-title">
@@ -94,7 +107,16 @@
         
         </div>
       </mat-tab>
-      <mat-tab label="Suivis"> Content 3 </mat-tab>
+      <mat-tab label="Suivis">
+        <div *ngFor="let favoriteMessage of favoriteMessagesList">
+          <div class="message-preview">
+            <div class="message-content">
+              <strong>{{ favoriteMessage.subject }}</strong> - {{ favoriteMessage.content | slice:0:50 }}...
+            </div>
+            <span class="message-date">{{ favoriteMessage.date | date:'dd MMMM yyyy à HH:mm' }}</span>
+          </div>
+        </div>
+      </mat-tab>
     </mat-tab-group>
   </div>
 
@@ -132,7 +154,7 @@
        </div>
        <div class="reply-section">
          <div>
-           <mat-icon style="padding: 10px;border: 0.5px solid #77B5FE; border-radius: 50%; color: #77B5FE;">check_small</mat-icon>
+           <mat-icon style="padding: 10px;border: 0.5px solid rgba(13, 13, 197, 0.8); border-radius: 50%; color: rgba(13, 13, 197, 0.8);">check_small</mat-icon>
          </div>
           <p>Nous avons bien reçu votre message.</p>
           <p>Merci de nous avoir contactés ! Nous vous répondrons généralement sous un délai <strong>1 jour</strong></p>
