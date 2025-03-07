@@ -139,6 +139,7 @@
     .container {
       flex-direction: column; /* Passage en colonne sur petits écrans */
       padding: 10px; /* Réduction du padding sur petits écrans */
+      width: 85%;
     }
   
     .main-card{
@@ -163,7 +164,7 @@
   }
   
   .search-input {
-    width: 98.5%; /* Largeur de 100% */
+    width: 98%; /* Largeur de 100% */
     padding: 10px; /* Ajoute un peu d'espace intérieur */
     margin: 20px 0;
     border: 1px solid #ccc; /* Bordure grise */

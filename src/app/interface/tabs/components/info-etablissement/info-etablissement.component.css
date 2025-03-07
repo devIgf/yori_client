@@ -5,9 +5,9 @@
   width: 30%;
 }
 
-/* .container-tab{
-  border: 0.5px solid #C2C1C1;
-} */
+.form{
+  width: 100%;
+}
 
 .tableau {
   border-collapse: collapse;
@@ -86,6 +86,7 @@ input[type="submit"]:hover {
 }
 
 .btn-send{
+  cursor: pointer;
   color: white;
   background-color: #0D0DC5;
   border: none;
@@ -94,13 +95,10 @@ input[type="submit"]:hover {
 }
 
 
-.div-btn{
+.div-btn{ 
   display: flex; 
   justify-content: right; 
   text-align: right; 
-  /* width: 50%; */
+  width: 114%;
 }
 
-@media (max-width: 768px) {
-
-}
