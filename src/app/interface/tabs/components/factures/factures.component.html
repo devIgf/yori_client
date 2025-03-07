@@ -11,7 +11,7 @@
     <div class="button-container">
       <button class="printPage" (click)="printPage()"> 
           <mat-icon>print</mat-icon>
-          Imprimer la liste des réservations
+          Imprimer
       </button>
     </div>
     <table class="tableau">
@@ -36,7 +36,7 @@
             <input type="checkbox" [(ngModel)]="item.selected" (change)="updateTotals()" />
           </td>
           <td>{{ item.title }}</td>
-          <td>{{ item.invoiceNumber }}</td>
+          <td style="color: #0D0DC5;"><a href="#">{{ item.invoiceNumber }}</a></td>
           <td>{{ item.startDate }}</td>
           <td>{{ item.endtDate }}</td>
           <td style="color: red;">Impayée (date limite {{ item.limitDate }}) </td>
@@ -62,12 +62,14 @@
   <!-- Nouvelle div pour afficher les détails de paiement -->
   <div *ngIf="showPaymentDetails">
      <div class="title">
-      <button (click)="resetView()"> 
+      <button (click)="resetView()" class="btn-retour"> 
         <mat-icon>arrow_back</mat-icon> 
         Retour au tableau
       </button>
-     <h1>Paiement des factures</h1>
+     <div>
+      <h1>Paiement des factures</h1>
      <p>Choisissez un mode de paiement et effectuez le règlement de vos factures</p>
+     </div>
      </div>
   
      <div class="big-card">
@@ -88,8 +90,8 @@
       </div>
      </form>
        <div class="card-right">
-        <div style="  border-bottom: 1px solid black;">Aperçu factures</div>
-        <div style="display: flex; justify-content: space-between;">
+        <div style="font-weight: bold;  border-bottom: 1px solid black;">Aperçu des factures</div>
+        <div style="display: flex; justify-content: space-between; font-weight: bold;">
           <label style="padding-left: 10px;">factures ({{selectedInvoices.length}}) </label>
         <button (click)="toggleList()" class="toggle-button">
           <mat-icon>{{ isListVisible ? 'expand_less' : 'expand_more' }}</mat-icon>

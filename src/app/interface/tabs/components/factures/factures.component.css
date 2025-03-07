@@ -4,6 +4,7 @@
 }
 
 .div-top{
+  border: 0.5px solid #C2C1C1;
   background-color: white;
   padding: 10px;
 }
@@ -12,7 +13,16 @@
   gap: 10px;
 }
 
+.btn-retour{
+  background-color: #f4f3f3;
+  border: 0.5px;
+  border-radius: 2px;
+  cursor: pointer;
+}
 
+.btn-retour:hover{
+  background-color: #bdb6b6;
+}
 
 .button-container {
     display: flex;               /* Utilisation de Flexbox */
@@ -40,11 +50,13 @@
   color: rgb(0, 0, 0);                /* Couleur du texte */
   border: none;                /* Supprime la bordure par défaut */
   text-decoration: none;       /* Supprime la décoration du texte */
-  cursor: pointer;             /* Change le curseur au survol */
+             /* Change le curseur au survol */
 }
 
-table {
+.tableau {
   background-color: white;
+  border: 0.5px solid #C2C1C1;
+
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
@@ -90,12 +102,14 @@ p {
 }
 
 .big-card{
+  width: 80%;
   margin: 0 100px;
   display: flex;
   justify-content: space-between;
 }
 
 .card-left, .card-right{
+  border: 0.5px solid #C2C1C1;
   background-color: white;
 }
 
@@ -130,7 +144,7 @@ p {
   padding: 10px;
   border: none;
   color: white;
-  background-color: #77B5FE;
+  background-color: #0D0DC5;
   border-radius: 5px;
 }
 
@@ -155,7 +169,7 @@ li {
 
 .solde {
   margin-top: auto;           /* Pousse le bouton vers le bas */
-  background-color: #77B5FE;  /* Couleur de fond du bouton */
+  background-color: #0D0DC5;  /* Couleur de fond du bouton */
   color: white;                /* Couleur du texte */
   border: none;                /* Supprime la bordure par défaut */
   padding: 10px 20px;         /* Espacement intérieur du bouton */
@@ -192,13 +206,6 @@ li {
   padding: 6px;
   /* text-align: left; */
   border-bottom: 1px solid #ddd;
-}
-
-
-.big-card{
-  margin: 0 100px;
-  display: flex;
-  justify-content: space-between;
 }
 
 
