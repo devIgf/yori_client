@@ -5,7 +5,7 @@ import { MatCard, MatCardTitle, MatCardHeader, MatCardTitleGroup } from '@angula
 import { MatSelectModule } from '@angular/material/select';
 
 @Component({
-  selector: 'app-add-categorie',
+  selector: 'app-add-categorie', 
   standalone: true,
   imports: [
     FormsModule,

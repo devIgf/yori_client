@@ -8,6 +8,7 @@ mat-label {
 
 
 .main-card {
+  border: 1px solid #C2C1C1;
   background-color: white;
   padding-left: 40px;
 }
@@ -18,20 +19,20 @@ ul {
 }
 
 .full-width {
-  width: 100%; /* Prend toute la largeur sur petits écrans */
+  width: 100%;
 }
 
 
 /* Ajout de styles pour la responsivité */
 @media (max-width: 768px) {
   .container {
-    flex-direction: column; /* Passe en colonne sur petits écrans */
-    padding: 10px; /* Réduction du padding sur petits écrans */
+    flex-direction: column; 
+    padding: 10px; 
   }
 
   .main-card,
   .sub-card {
-    flex: 1 1 100%; /* Prend toute la largeur sur petits écrans */
-    margin: 10px 0; /* Marges verticales */
+    flex: 1 1 100%;
+    margin: 10px 0;
   }
 }

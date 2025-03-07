@@ -20,3 +20,4 @@ export class TypeComponent {
     return Array(starCount).fill(0);
   }
 }
+ 

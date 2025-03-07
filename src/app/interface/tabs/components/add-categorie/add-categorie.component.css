@@ -1,5 +1,5 @@
 .container {
-    padding: 20px 30px;
+    padding: 20px 20px;
   }
   
   #hebergement{
@@ -53,6 +53,8 @@
   
   .main-card {
     background-color: white;
+    border: 1px double #C2C1C1;
+    padding: 0 5%;
   }
   
   
