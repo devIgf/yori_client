@@ -9,6 +9,11 @@
   margin-bottom: 15px;
 }
 
+select.custom-select {
+  background-color: rgba(13, 13, 197, 0.8);
+  color: white;
+  border: none;
+}
 
 .tab-navigation{
     padding-bottom: 10px;

@@ -21,22 +21,22 @@ export class AnalyseComponent implements OnInit{
   changeIsLeftSidebarCollapsed = output<boolean>();
   items = [
     { 
-      icon: 'fal fa-user',
+      icon: 'fas fa-user',
       label: 'Nombre de réservations',
       component: LeftOneComponent
     },
     {
-      icon: 'fal fa-user-times',
+      icon: 'fas fa-user-times',
       label: 'Réservations annulées',
       component: LeftTwoComponent
     },
     {
-      icon: 'fal fa-sack-dollar',
+      icon: 'fas fa-sack-dollar',
       label: 'Montant des réservations',
       component: LeftTreeComponent
     },
     {
-      icon: 'fal fa-hand-holding',
+      icon: 'fas fa-hand-holding',
       label: 'Montant des commissions',
       component: LeftFourComponent
     },
@@ -47,12 +47,7 @@ export class AnalyseComponent implements OnInit{
   selectedTab: number = 0; // Onglet sélectionné par défaut
 
   ngOnInit() {
-      // Récupérer l'index de l'onglet actif depuis localStorage
-      const storedTabIndex = localStorage.getItem('activeTab');
-      if (storedTabIndex) {
-          this.selectedTab = +storedTabIndex; // Convertir en nombre
-          this.activeComponent = this.items[this.selectedTab].component; // Définir le composant actif
-      }
+      
   }
 
   setActiveComponent(component: any) {
