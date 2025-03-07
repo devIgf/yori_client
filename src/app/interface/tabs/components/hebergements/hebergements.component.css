@@ -6,22 +6,29 @@
 
 
 .revenir{
+  background-color: #efefef;
+  border: none;
   margin: 10px 30px;
   height: 30px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.revenir:hover{
+  background-color: #cecece;
 }
 
 .titre{
-  margin-left: 80px;
+  margin-left: 7%;
   text-align: left;
 }
 
-.section{
-    width: 90%; /* Largeur du conteneur */
-    max-width: 1200px; /* Largeur maximale pour éviter que le conteneur ne devienne trop large sur les grands écrans */
-    margin: 0 auto; /* Centre le conteneur horizontalement */
-    padding: 16px; /* Ajoute un peu d'espace intérieur */
-    box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+.section {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
+
 
 .controls {
   display: flex;
@@ -42,20 +49,19 @@
 
 .btn, .btn-1 {
   font-size: 16px;
-  margin-right: 10px;
   cursor: pointer;
-  border: 0.2px solid #77B5FE;
+  border: 0.2px solid #0D0DC5;
   background-color: white;
-  color: #77B5FE;
+  color: #0D0DC5;
 
 }
 
 .btn-1{
-    color: #77B5FE;
+    color: #0D0DC5;
 }
 
 .btn2{
-    background-color: #77B5FE;
+    background-color: #0D0DC5;
     color: white;
     border: none;
     cursor: pointer;
@@ -68,12 +74,10 @@
 
 
 .all-btn{
-  background-color: white;
+  background-color: initial;
   display: flex;
-  padding:20px;
-  margin-top: -2.5px;
-  margin-left: 4px;
-  width: 291px;
+  gap: 3%;
+  width: 100%;
 
 }
 
@@ -82,15 +86,29 @@
 }
 
 
+.btn-add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
 
-.btn-add{
-  margin-top: 5px;
-  padding-top: 20px;
-  width: 290px;
-  height: 150px;
-  /* object-fit: cover; */
-  background-color: white;
-  border: 0.2px solid rgb(212, 212, 212);
+
+.btn-add:hover {
+  border-color: #007bff;
+}
+
+.btn-add button {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 
@@ -99,23 +117,72 @@
   font-size: 25px;
   font-weight: 200;
   border: none;
-  color: #77B5FE;
+  color: #0D0DC5;
   background-color: initial;
 }
 
 .btn-add mat-icon{
   font-size: 25px;
   cursor: pointer;
-  color: #77B5FE;
+  color: #0D0DC5;
 }
 
 .btn-add img{
+  width: 50px;
+  height: 50px;
+  margin-top: 10px;
   cursor: pointer;
 }
 
 input[type="file"] {
   margin-top: 10px;
 }
+
+.image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Assure que l'image couvre bien la zone */
+}
+
+
+.action-buttons {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+}
+
+
+.btn-action {
+  background-color: initial;
+  border:1px solid #0D0DC5;
+  color: #0D0DC5;
+}
+
+.btn-action:hover {
+  background-color: #0056b3;
+}
+
+.btn-delete {
+  background-color: initial;
+  border: 1px solid #dc3545;
+  color: #dc3545;
+}
+
+.btn-delete:hover {
+  background-color: #a71d2a;
+}
+
+
+
+.btn-action, .btn-delete {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
 
 
 .image-gallery {
@@ -129,18 +196,20 @@ input[type="file"] {
 
 
 .image-item {
-  /* background-color: white; */
-  padding-top: 5px;
   position: relative;
   display: inline-block;
-  width: 340px;
+  width: 91.5%;
   height: 80%;
 }
 
+.image-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
 .image-item input[type="checkbox"] {
   position: absolute;
-  top: 5px;
-  left: 5px;
   z-index: 10;
 }
 
@@ -151,8 +220,9 @@ input[type="file"] {
 
 
 .image-item img {
-  width: 330px;
-  height: 250px;  /* Garde les proportions de l'image */
+  position: relative;
+  width: 100%;
+  height: 100%;  /* Garde les proportions de l'image */
   object-fit: cover; /* Assure que l'image couvre la cellule sans déformation */
 }
 
@@ -167,13 +237,7 @@ input[type="file"] {
   color: white; /* Couleur du texte */
   text-align: center; /* Centre le texte */
   padding: 15px 0; /* Ajoute un peu d'espace autour du texte */
-  /* margin-bottom: 10px; */
-  width: 330px;
-}
-
-
-mat-label {
-  font-weight: 500;
+  width: 97%;
 }
 
 
@@ -182,122 +246,31 @@ mat-label {
   background-color: white;
 }
 
-.sub-card {
-  flex: 1 1 40%;
-}
 
-#haut{
-  margin-bottom: 10px;
-  background-color: white;
-}
 
-.example-card {
-  max-width: 100%;
-  margin: 10px 0;
-  background-color: inherit;
-}
-
-.lit-info {
-  display: flex;
-  align-items: center; /* Aligne verticalement l'image et le texte */
-  flex-wrap: wrap; /* Permet au contenu de se répartir sur plusieurs lignes si nécessaire */
-}
-
-.lit-image {
-  margin-bottom: 20px;
-  height: 90px; /* Hauteur fixe pour l'image */
-  width: 90px; /* Largeur fixe pour l'image */
-}
-
-.lit-details {
-  font-size: 14px; /* Taille du texte */
-  margin-left: 5px; /* Espace entre l'image et le texte */
-}
-
-.full-width {
-  width: 100%; /* S'assurer que les champs prennent toute la largeur */
-}
-
-.quantity-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #a9a8a8;
-  padding: 3px;
-  height: 30px;
-}
-
-.quantity {
-  display: flex;
-  align-items: center;
-}
-
-.btnChambre {
-  width: 40px;
-  height: 40px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-}
-
-.btn-black {
-  background-color: inherit;
-  color: rgb(0, 0, 0);
-  font-size: 25px;
-  margin-bottom: 15px;
-}
-
-.btn-blue {
-  background-color: inherit;
-  color: #77B5FE;
-  font-size: 25px;
-  margin-bottom: 15px;
-}
-
-.inputbox {
-  background-color: inherit;
-  width: 40px;
-  text-align: center;
-  margin: 0 10px;
-  font-weight: bold;
-}
-
-.espace {
-  margin-top: 70px;
-  margin-left: 30px;
-  font-weight: 500;
-}
-
-ul {
-  margin-top: 50px;
-}
-
-/* Ajout de styles pour la responsivité */
+/* Media Queries pour le responsive */
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column; /* Passage en colonne sur petits écrans */
-    padding: 10px; /* Réduction du padding sur petits écrans */
+  .image-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 2fr));
   }
 
-  .main-card,
-  .sub-card {
-    width: 100%; /* Prendre 100% de la largeur sur petits écrans */
-    margin:10px  0; /* Éliminer les marges pour éviter les débordements */
+  .action-buttons {
+    flex-direction: column;
+    gap: 10px;
   }
 
-  .example-card {
-    max-width: 100%; /* Permettre à la carte d'occuper toute la largeur */
+  .btn-action, .btn-delete {
+    width: 100%;
   }
 
-  .quantity-container {
-    width: 100%; /* S'assurer que le conteneur de quantité prend toute la largeur */
+  .btn-add{
+    width: 80%;
+    margin-top: 20%;
   }
+}
 
-  .inputbox {
-    width: 40px; /* Réduire la largeur de l'input sur petits écrans */
-  }
-
-  .btn {
-    height: 35px; /* Ajuster la hauteur des boutons pour de petits écrans */
+@media (max-width: 480px) {
+  .image-gallery {
+    grid-template-columns: 1fr;
   }
 }

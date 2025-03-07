@@ -13,7 +13,7 @@ import { MatIcon } from '@angular/material/icon';
   styleUrl: './photo-etablisssement.component.css'
 })
 export class PhotoEtablissementComponent {
-  // Galerie principale (existant)
+  // Galerie principale (existant) 
   images: string[] = [
     'assets/img/chambre.png',
     'assets/img/chambre.png',

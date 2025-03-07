@@ -15,7 +15,7 @@ import { AddCategorieComponent } from "../add-categorie/add-categorie.component"
   standalone: true,
   imports: [
     CommonModule,
-    MatIcon,
+    // MatIcon,
     MatSelectModule,
     UpdateChambreComponent,
     UpdateTarifsComponent,

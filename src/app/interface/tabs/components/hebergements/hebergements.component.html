@@ -2,31 +2,39 @@
   <div *ngIf="currentDiv === 'default'">
     <div class="gallery-container">
       <div class="titre">
-        <h3>Hebergements</h3>
+        <h2>Hebergements</h2>
       </div>
       <section class="section">
+        <!-- Input file caché pour l'upload d'images -->
         <input #fileInput type="file" accept="image/*" (change)="addImage($event)" style="display: none;" />
+      
+        <!-- Galerie d'images -->
         <div class="image-gallery">
+          <!-- Boucle pour afficher chaque image -->
           <div *ngFor="let image of images; let i = index" class="image-item">
-              <input type="checkbox" [checked]="isSelected(i)" (change)="toggleSelection(i)" id="image-{{i}}" />
-              <label for="image-{{i}}">
-                  <img [src]="image" alt="Image {{i + 1}}" class="image" />
-                  <div class="image-caption">Chambre luxieuse {{i + 1}}</div>
-              </label>
-              <div class="all-btn">
-                  <button class="btn-1" (click)="showDiv1()">Modifier</button>
-                  <button class="btn" (click)="deleteSelected()">Supprimer</button>
-                  <button class="btn2" (click)="showDiv2()"><mat-icon>photo_camera</mat-icon></button>
-              </div>
+            <!-- Checkbox pour sélectionner l'image -->
+            <input type="checkbox" [checked]="isSelected(i)" (change)="toggleSelection(i)" id="image-{{i}}" />
+            <label for="image-{{i}}">
+              <img [src]="image" alt="Image {{i + 1}}" class="image" />
+              <div class="image-caption">Chambre luxieuse {{i + 1}}</div>
+            </label>
+      
+            <!-- Boutons d'actions pour chaque image -->
+            <div class="action-buttons">
+              <button class="btn-action" (click)="showDiv2()">Modifier</button>
+              <button class="btn-action">Option</button>
+              <button class="btn-delete" (click)="deleteSelected()">Supprimer</button>
+            </div>
           </div>
+      
+          <!-- Bouton pour ajouter une nouvelle catégorie -->
           <div class="btn-add">
-            <button (click)="showDiv2()">
-              Ajouter une categorie
-            </button><br>
-            <!-- <mat-icon>add_circle</mat-icon> -->
-            <img src="assets/img/ajoute.png" alt="" (click)="showDiv2()">
+            <button (click)="showDiv1()">
+              Ajouter une catégorie
+            </button>
+            <img src="assets/img/ajoute.png" alt="Ajouter une catégorie" (click)="showDiv2()">
           </div>
-      </div>
+        </div>
       </section>
     </div>
   </div>

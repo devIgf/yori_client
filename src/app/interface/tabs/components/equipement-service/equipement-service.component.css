@@ -6,16 +6,12 @@
   box-sizing: border-box; /* Inclut le padding dans la largeur totale */
 }
 
-.search-container {
-  margin-bottom: 10px;
+.section{
+  border: 1px solid #C2C1C1;
 }
 
-.search-box {
-  padding: 8px;
-  font-size: 16px;
-  width: 100%;
-  max-width: 300px;
-  margin-bottom: 20px;
+.search-container {
+  margin-bottom: 10px;
 }
 
 .checkbox-list {
@@ -108,7 +104,7 @@ section{
 
 
 #search{
-  width: 50%;
+  width: 100%;
   height: 30px;
 }
 
@@ -132,4 +128,27 @@ section{
 .menu-option button.selected {
   background-color: #a2a3a3; /* Couleur de fond pour les boutons sélectionnés */
   color: black; /* Couleur du texte pour les boutons sélectionnés */
+}
+
+
+
+.popup {
+  position: fixed;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #8181ff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  z-index: 1000; /* Assurez-vous que le pop-up soit au-dessus des autres éléments */
+}
+
+.popup button{
+background-color: #0D0DC5;
+color: white;
+padding: 10px;
+border: none;
 }

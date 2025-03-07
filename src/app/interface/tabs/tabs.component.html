@@ -10,30 +10,23 @@
           <app-accueil-pro></app-accueil-pro>
         </mat-tab>
 
-        <mat-tab>
+        <mat-tab [disabled]="!isOptionSelected" (click)="onTabClick()">
           <ng-template mat-tab-label>
             <div class="circle-container" [ngClass]="{'active-tab-background': activeTabIndex === 1}">
-              <div class="circle" (click)="openSelect(select)">
-                <mat-icon>border_color</mat-icon>
+              <div class="circle" (click)="openSelect(select)" role="button" tabindex="0" aria-label="Ouvrir le menu déroulant">
+                <mat-icon aria-hidden="true">border_color</mat-icon>
               </div>
-              <select #select (change)="showComponent($event)" style="background-color: rgba(13, 13, 197, 0.8); color: white; border: none;">
-                <option value="" disabled [selected]="currentComponent === null">Etablissement</option>
-                <option value="composant1" [selected]="currentComponent === 'composant1'">info sur l'établissement</option>
-                <option value="composant2" [selected]="currentComponent === 'composant2'">type d'établissement</option>
-                <option value="composant3" [selected]="currentComponent === 'composant3'">photos</option>
-                <option value="composant4" [selected]="currentComponent === 'composant4'">équipement et service</option>
-                <option value="composant5" [selected]="currentComponent === 'composant5'">hébergement</option>
+              <select #select (change)="showComponent($event)" class="custom-select">
+                <option *ngFor="let option of options"
+                        [value]="option.value"
+                        [selected]="currentComponent === option.value">
+                  {{ option.label }}
+                </option>
               </select>
             </div>
           </ng-template>
           <div *ngIf="currentComponent">
-            <ng-container [ngSwitch]="currentComponent">
-              <app-info-etablissement *ngSwitchCase="'composant1'"></app-info-etablissement>
-              <app-type *ngSwitchCase="'composant2'"></app-type>
-              <app-telecharge-photos *ngSwitchCase="'composant3'"></app-telecharge-photos>
-              <app-equipement-service *ngSwitchCase="'composant4'"></app-equipement-service>
-              <app-hebergements *ngSwitchCase="'composant5'"></app-hebergements>
-            </ng-container>
+            <ng-container *ngComponentOutlet="componentMap[currentComponent]"></ng-container>
           </div>
         </mat-tab>
 
