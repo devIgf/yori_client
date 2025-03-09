@@ -1,12 +1,11 @@
 .gallery-container {
-  padding: 20px;
+  padding: 20px 12px;
 }
 
 .section{
   border: 1px solid #C2C1C1;
-
   background-color: white;
-  padding: 10px 0 0 40px;
+  padding: 10px;
 }
 
 .controls {
@@ -137,9 +136,6 @@ input[type="file"] {
   object-fit: cover; /* Assure que l'image couvre la cellule sans déformation */
 }
 
-/* .image-item:hover img {
-  transform: scale(1.05);
-} */
 
 
 .delete-icon {
@@ -157,9 +153,12 @@ input[type="file"] {
 
 
 @media (max-width: 768px) {
-  .section{
-    padding: 0;
+  .container{
+    width: 99%;
   }
+  /* .section{
+    padding: 0;
+  } */
 
   .cadre{
     margin: 0;

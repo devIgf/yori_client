@@ -1,16 +1,19 @@
+.container{
+  margin: 0;
+}
+
 .gallery-container {
   padding: 20px;
 }
 
 .controls {
-  /* background-color: rgba(51, 255, 0, 0.758); */
-  margin: 0 0 20px 20px;
-  width: 550px;
+  width: 40%;
 }
 
 .section{
   background-color: white;
-  padding: 20px 0 0 40px;
+  border: 1px solid #C2C1C1;
+  padding-left: 10%;
 
 }
 
@@ -25,8 +28,14 @@
   justify-content: center;
   margin-top: 40px;
   background-color: white;
-  border: 5px dashed   black;
+  border: 2px dashed   black;
   padding: 20px;
+}
+
+
+.cadre:hover{
+  cursor: pointer;
+  border: 2px solid #0D0DC5;
 }
 
 
@@ -37,11 +46,11 @@
 
 .add-photo-btn {
   background-color: white;
-  color: #77B5FE;
+  color: #0D0DC5;
   padding: 5px 5px;
   font-size: 15px;
   cursor: pointer;
-  border: 0.2px solid #77B5FE;
+  border: 0.2px solid #0D0DC5;
   margin: 0;
 }
 
@@ -61,13 +70,13 @@
   cursor: pointer;
   font-weight: 200;
   border: none;
-  color: #77B5FE;
+  color: #0D0DC5;
   background-color: initial;
 }
 
 .btn-add mat-icon{
   cursor: pointer;
-  color: #77B5FE;
+  color: #0D0DC5;
 }
 
 input[type="file"] {
@@ -87,7 +96,7 @@ input[type="file"] {
 .entête p{
   color: white;
   display: inline-block;
-  background-color: #77B5FE;
+  background-color: #0D0DC5;
   margin: 10px 0 0 50px;
   padding: 5px 10px;
 }
@@ -95,7 +104,8 @@ input[type="file"] {
 .image-gallery {
   background-color: white;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  gap: 5PX;
+  grid-template-columns: repeat(3, 1fr);
   padding: 16px;
   width: 600px;
 }
@@ -104,6 +114,7 @@ input[type="file"] {
 .image-item {
   position: relative;
   display: inline-block;
+  gap: 10px;
 }
 
 .image-item input[type="checkbox"] {
@@ -114,7 +125,7 @@ input[type="file"] {
 }
 
 .image {
-  width: 50px;
+  width: 30%;
   height: 120px;
   object-fit: cover;
   transition: transform 0.2s;
@@ -128,7 +139,7 @@ input[type="file"] {
 
 
 .image-item img {
-  width: 250px;
+  width: 100%;
   height: 180px;  /* Garde les proportions de l'image */
   object-fit: cover; /* Assure que l'image couvre la cellule sans déformation */
 }
@@ -137,13 +148,37 @@ input[type="file"] {
 
 .delete-icon {
   position: absolute;
-  background-color: white; /* Fond blanc */
-  border-radius: 50%; /* Cercle */
-  color: black; /* Couleur de la croix */
+  /* background-color: white; */
+  border-radius: 40%; /* Cercle */
+  color: rgb(255, 0, 0); /* Couleur de la croix */
   padding: 5px; /* Espacement autour de la croix */
   cursor: pointer; /* Curseur pointer pour indiquer que c'est cliquable */
+  top: 0;
+  right: 0;
 }
 
 .delete-icon:hover {
   background-color: #f0f0f0; /* Changez le fond au survol pour un effet visuel */
+}
+
+
+@media (max-width: 768px) {
+  .container{
+    width: 99%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .image-gallery{
+    width: 80%;
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
+
+
+  .cadre{
+    width: 200%;
+  }
 }

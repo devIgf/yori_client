@@ -26,6 +26,7 @@ ul {
 /* Ajout de styles pour la responsivité */
 @media (max-width: 768px) {
   .container {
+    width: 94%;
     flex-direction: column; 
     padding: 10px; 
   }
