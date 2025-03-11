@@ -1,5 +1,5 @@
-
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 // import * as Highcharts from 'highcharts';
 
 
@@ -27,16 +27,25 @@ import { Component, OnInit } from '@angular/core';
 //     };
 // }
 
+=======
+import { NgApexchartsModule } from 'ng-apexcharts'; // Importez NgApexchartsModule
+>>>>>>> dcf23f2cbe4ab9743d76f889e7bc186dc66e5701
 
 @Component({
   selector: 'app-left-one',
   standalone: true,
+<<<<<<< HEAD
   imports: [
+=======
+  imports: [ 
+    NgApexchartsModule
+>>>>>>> dcf23f2cbe4ab9743d76f889e7bc186dc66e5701
   ],
   templateUrl: './left-one.component.html',
   styleUrl: './left-one.component.css'
 })
 export class LeftOneComponent implements OnInit {
+<<<<<<< HEAD
   // public options!: ChartOptions;
 
   // Highcharts = Highcharts; 
@@ -89,4 +98,28 @@ export class LeftOneComponent implements OnInit {
     // };
   }
   
+=======
+
+  ngOnInit() {}
+  
+    // Options du graphique
+    public chartOptions: any = {
+      series: [
+        {
+          name: 'Ventes 2023',
+          data: [65, 59, 80, 81, 56, 55, 40],
+        },
+      ],
+      chart: {
+        type: 'bar', // Type de graphique (bar, line, pie, etc.)
+        height: 350, // Hauteur du graphique
+      },
+      xaxis: {
+        categories: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet'],
+      },
+      title: {
+        text: 'Ventes mensuelles 2023',
+      },
+    };
+>>>>>>> dcf23f2cbe4ab9743d76f889e7bc186dc66e5701
 }

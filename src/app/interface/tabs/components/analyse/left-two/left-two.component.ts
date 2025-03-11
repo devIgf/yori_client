@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 // import * as Highcharts from 'highcharts';
 
 
@@ -25,17 +26,26 @@ import { Component, OnInit } from '@angular/core';
 //       valueSuffix: string;
 //   };
 // }
+=======
+
+
+
+>>>>>>> dcf23f2cbe4ab9743d76f889e7bc186dc66e5701
 
 @Component({
   selector: 'app-left-two',
   standalone: true,
   imports: [
+<<<<<<< HEAD
     
+=======
+>>>>>>> dcf23f2cbe4ab9743d76f889e7bc186dc66e5701
   ],
   templateUrl: './left-two.component.html',
   styleUrl: './left-two.component.css'
 })
 export class LeftTwoComponent implements OnInit{
+<<<<<<< HEAD
   // public options!: ChartOptions;
 
     // Highcharts = Highcharts; 
@@ -86,6 +96,12 @@ export class LeftTwoComponent implements OnInit{
       //     valueSuffix: ' visiteurs'
       //   }
       // };
+=======
+
+  
+    ngOnInit() {
+
+>>>>>>> dcf23f2cbe4ab9743d76f889e7bc186dc66e5701
     }
 }
  

@@ -1,6 +1,9 @@
 
 import { Component } from '@angular/core';
+<<<<<<< HEAD
 // import * as Highcharts from 'highcharts';
+=======
+>>>>>>> dcf23f2cbe4ab9743d76f889e7bc186dc66e5701
 
 
 
@@ -12,7 +15,11 @@ import { Component } from '@angular/core';
 //   };
 //   title: {
 //       text: string;
+<<<<<<< HEAD
 //   }; 
+=======
+//   };
+>>>>>>> dcf23f2cbe4ab9743d76f889e7bc186dc66e5701
 //   yAxis: {
 //       title: {
 //           text: string;
@@ -33,11 +40,16 @@ import { Component } from '@angular/core';
   selector: 'app-left-four',
   standalone: true,
   imports: [
+<<<<<<< HEAD
+=======
+    
+>>>>>>> dcf23f2cbe4ab9743d76f889e7bc186dc66e5701
   ],
   templateUrl: './left-four.component.html',
   styleUrl: './left-four.component.css'
 }) 
 export class LeftFourComponent {
+<<<<<<< HEAD
   // public options!: ChartOptions;
   // Highcharts = Highcharts;
   
@@ -88,6 +100,12 @@ export class LeftFourComponent {
     //     valueSuffix: ' visiteurs'
     //   }
     // };
+=======
+  
+
+  ngOnInit() {
+    
+>>>>>>> dcf23f2cbe4ab9743d76f889e7bc186dc66e5701
   }
 }
  

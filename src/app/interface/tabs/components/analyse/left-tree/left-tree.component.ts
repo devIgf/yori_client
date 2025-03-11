@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
+<<<<<<< HEAD
 // import * as Highcharts from 'highcharts';
+=======
+>>>>>>> dcf23f2cbe4ab9743d76f889e7bc186dc66e5701
 
 // interface ChartOptions {
 //   chart: {
@@ -17,7 +20,11 @@ import { Component } from '@angular/core';
 //   xAxis: {
 //     categories: string[];
 //   };
+<<<<<<< HEAD
 //   series: Highcharts.SeriesOptionsType[];
+=======
+//   series: Highcharts.SeriesOptionsType[]; // Utilisation du type approprié pour les séries
+>>>>>>> dcf23f2cbe4ab9743d76f889e7bc186dc66e5701
 //   tooltip: {
 //     shared: boolean;
 //     valueSuffix: string;
@@ -32,6 +39,7 @@ import { Component } from '@angular/core';
   styleUrl: './left-tree.component.css',
 })
 export class LeftTreeComponent {
+<<<<<<< HEAD
   // public options!: ChartOptions;
 
   // Highcharts = Highcharts; 
@@ -82,5 +90,11 @@ export class LeftTreeComponent {
     //     valueSuffix: ' visiteurs',
     //   },
     // };
+=======
+
+
+  ngOnInit() {
+   
+>>>>>>> dcf23f2cbe4ab9743d76f889e7bc186dc66e5701
   }
 }
