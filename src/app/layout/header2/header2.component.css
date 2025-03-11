@@ -35,7 +35,7 @@
 }
 
 #select {
-  background-color: rgba(13, 13, 197, 0.8);
+  background-color: initial;
   border: none;
   color: white;
   font-size: 15px;
